@@ -22,7 +22,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-@TestPropertySource(locations="classpath:test.properties")
+@TestPropertySource(locations = "classpath:test.properties")
 @Transactional
 public class RestControllerTest {
 
@@ -65,35 +65,31 @@ public class RestControllerTest {
 		MvcResult response = doPostAndGetResponse(PROCESS_URL, PROCESS_BODY);
 		assertEquals("Condition error", HttpStatus.UNAUTHORIZED.value(), response.getResponse().getStatus());
 	}
-	
+
 	@Test
 	public void testProcess_OK() {
 		MvcResult response = doPostWithTokenAndGetResponse(PROCESS_URL, HEADER_AUTH_OK, PROCESS_BODY);
 		assertEquals("Condition error", HttpStatus.OK.value(), response.getResponse().getStatus());
 	}
 
-	 private MvcResult doPostWithTokenAndGetResponse(String url, String tokenHeader, String body) {
-	        try {
-	            return backEndMockMvc.perform(post(url)
-	                    .contentType(MediaType.APPLICATION_JSON)
-	                    .header("Authorization", tokenHeader)
-	                    .content(body)).andReturn();
-	        } catch (final Exception e) {
-	            e.printStackTrace();
+	private MvcResult doPostWithTokenAndGetResponse(String url, String tokenHeader, String body) {
+		try {
+			return backEndMockMvc.perform(post(url).contentType(MediaType.APPLICATION_JSON)
+					.header("Authorization", tokenHeader).content(body)).andReturn();
+		} catch (final Exception e) {
+			e.printStackTrace();
 
-	        }
-	        return null;
-	    }
-	 
-		
-		@Test
-		public void testGetUsers() throws Exception {
-			MvcResult response = doGet("/user");
-			assertEquals("Condition error", HttpStatus.OK.value(), response.getResponse().getStatus());
 		}
-		
-		 private MvcResult doGet(String url) throws Exception {
-		        return backEndMockMvc.perform(get(url))
-		                .andReturn();
-		    }
+		return null;
+	}
+
+	@Test
+	public void testGetUsers() throws Exception {
+		MvcResult response = doGet("/user");
+		assertEquals("Condition error", HttpStatus.OK.value(), response.getResponse().getStatus());
+	}
+
+	private MvcResult doGet(String url) throws Exception {
+		return backEndMockMvc.perform(get(url)).andReturn();
+	}
 }

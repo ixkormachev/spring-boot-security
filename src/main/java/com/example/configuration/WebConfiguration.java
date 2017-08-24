@@ -12,5 +12,4 @@ public class WebConfiguration extends RepositoryRestMvcConfiguration {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 		return bCryptPasswordEncoder;
 	}
-
 }

@@ -1,4 +1,4 @@
-This sample application shows several usefull features:
+THIS SAMPLE APPLICATION SHOWS SEVERAL USEFULL FEATURES:
 
 1. spring boot
 2. spring security
@@ -12,12 +12,12 @@ NB: main rest services feature could be seen through:
 
 /spring-boot-ex2/src/main/resources/static/db/ ...
 
+APP RUN
 1. mvn clean package
 2. if using external db, set mysql and run db_structure.sql and insert_roles.sql
 3. java -jar target\demo-0.0.1-SNAPSHOT.jar
 
-
-Testing with curl
+TESTING WITH CURL
 
 1.
 curl -H "Content-Type: application/json"  -X POST -d '{"id":null,"email":"test2@test.com","password":"password2","name":"user2","lastName":"lastName2","active":1,"roles":["ADMIN"]}' http://localhost:8080/registration
