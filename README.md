@@ -1,4 +1,4 @@
-<<This sample application shows several usefull features:>>
+This sample application shows several usefull features:
 
 1. spring boot
 2. spring security
@@ -17,7 +17,8 @@ NB: main rest services feature could be seen through:
 3. java -jar target\demo-0.0.1-SNAPSHOT.jar
 
 
-<<Testing with curl>>
+Testing with curl
+
 1.
 curl -H "Content-Type: application/json"  -X POST -d '{"id":null,"email":"test2@test.com","password":"password2","name":"user2","lastName":"lastName2","active":1,"roles":["ADMIN"]}' http://localhost:8080/registration
 
