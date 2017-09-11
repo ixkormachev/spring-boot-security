@@ -15,7 +15,8 @@ NB: main rest services feature could be seen through:
 APP RUN
 1. mvn clean package
 2. if using external db, set mysql and run db_structure.sql and insert_roles.sql
-3. java -jar target\demo-0.0.1-SNAPSHOT.jar
+3.
+java -jar target\spring-boot-ex2-0.0.1-SNAPSHOT.jar
 
 TESTING WITH CURL
 
